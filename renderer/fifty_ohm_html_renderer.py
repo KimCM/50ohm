@@ -261,7 +261,7 @@ class FiftyOhmHtmlRenderer(HtmlRenderer):
     def render_picture_helper(id, ref, text, number, alt_text):
         return f"""
                 <figure class="picture" id="ref_{ref}" name="{ref}">
-                    <img src="pictures/{id}.svg" alt="{alt_text}">
+                    <a href="pictures/{id}.svg"><img src="pictures/{id}.svg" alt="{alt_text}"></a>
                     <figcaption>Abbildung {number}: {text}</figcaption>
                 </figure>
             """
@@ -277,7 +277,7 @@ class FiftyOhmHtmlRenderer(HtmlRenderer):
     def render_photo_helper(id, ref, text, number, alt_text):
         return f"""
                 <figure class="photo" id="ref_{ref}" name="{ref}">
-                    <img src="photos/{id}.png" alt="{alt_text}">
+                    <a href="photos/{id}.png"><img src="photos/{id}.png" alt="{alt_text}"></a>
                     <figcaption>Abbildung {number}: {text}</figcaption>
                 </figure>
             """
