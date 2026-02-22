@@ -31,6 +31,24 @@ class FiftyOhmHtmlSlideRenderer(FiftyOhmHtmlRenderer):
         qso += "</div>\n"
         return qso
 
+    @staticmethod
+    def render_picture_helper(id, ref, text, number, alt_text):
+        return f"""
+                <figure class="picture" id="ref_{ref}" name="{ref}">
+                    <img src="pictures/{id}.svg" alt="{alt_text}">
+                    <figcaption>Abbildung {number}: {text}</figcaption>
+                </figure>
+            """
+
+    @staticmethod
+    def render_photo_helper(id, ref, text, number, alt_text):
+        return f"""
+                <figure class="photo" id="ref_{ref}" name="{ref}">
+                    <img src="photos/{id}.png" alt="{alt_text}">
+                    <figcaption>Abbildung {number}: {text}</figcaption>
+                </figure>
+            """
+
     def render_tag(self, token):
         if token.tagtype == "fragment":
             return f'<div class="fragment">\n{self.render_inner(token)}\n</div>\n'
