@@ -24,7 +24,7 @@ class FiftyOhmHtmlSlideRenderer(FiftyOhmHtmlRenderer):
 
     @staticmethod
     def render_figure_link_helper(url, text):
-        return text # add no link to figures in slides
+        return text
 
     def render_qso(self, token):
         qso = '<div class="qso r-fit-text">\n'
